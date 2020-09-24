@@ -1,19 +1,13 @@
-nuevaSalida = 0
-s = t = f = 0
-vector = input()
-vector=vector.split(" ")
-s = int(vector[0])
-t = int(vector[1])
-f = int(vector[2])
-if s == 24:
-    s = 0
-if t == 24:
-    t = 0
-if ((s>=0) & (s<=24) & (t>=0) & (t<=24) & (f>=-12) & (f<=12)):
-    Salida = s + t + f
-    if Salida>=0 and Salida<24:
-        print(Salida)
-    elif Salida>=24:
-        print(Salida-24)
-    elif Salida < 0:
-        print(24+Salida)
+matrizAux=[["0","1","2","3","4","5","6","7","8","9"],["6","2","5","5","4","5","6","3","7","6"]]
+contadorLeds = 0
+
+cantidadNumeros=int(input())
+
+for i in range(cantidadNumeros):
+    numero=str(input())
+    for q in range(len(numero)):
+        for j in range(10):
+            if numero[q] == matrizAux[0][j]:
+                contadorLeds = contadorLeds + int(matrizAux[1][j])
+    print(contadorLeds, "leds")
+    contadorLeds = 0
